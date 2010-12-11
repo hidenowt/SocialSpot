@@ -1,3 +1,6 @@
 development:
   database: socialspot_development
   host: localhost
+test:
+  database: socialspot_test
+  host: localhost

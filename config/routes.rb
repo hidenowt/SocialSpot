@@ -1,4 +1,8 @@
 SocialSpot::Application.routes.draw do
+  resources :eventos , :only => [:index,:show ,:new , :create] do
+    get :vou , :on => :collection
+    get :next, :on => :collection
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
