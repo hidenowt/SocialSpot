@@ -23,6 +23,7 @@ class EventosControllerTest < ActionController::TestCase
     assert_difference('Track.count') do
       get :index
     end
+    assert Track.last.action == 'index'
   end
   test "should see an evento in index" do
    Evento.create_example
@@ -72,8 +73,22 @@ class EventosControllerTest < ActionController::TestCase
   end
 
   test "should get vou" do
-    get :vou
+    get :vou , :id => Evento.last.id.to_s
     assert_response :success
+  end
+  test "should show how many people go to evento" do
+    get :show , :id=> Evento.last.id.to_s
+    assert @response.body.match('Quantos vao: '+Evento.last.quantos_vao?.to_s)!=nil
+  end
+  test "should complete vou and change number" do
+    assert_difference('Evento.last.quantos_vao?') do
+      get :vou , :id => Evento.last.id.to_s
+    end
+    assert_response :success
+  end
+  test "should create a session_id" do
+    get :index
+    assert Track.last.session_id != nil
   end
 
 end

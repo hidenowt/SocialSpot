@@ -3,6 +3,7 @@ Tipo: <%= @evento.tipo %><br>
 Custo: <%= @evento.custo %><br>
 Local: <%= @evento.local %><br>
 Data: <%= @evento.data %><br>
+Quantos vao: <%= @evento.quantos_vao? %><br>
 <%= link_to('Proximo',:action => :next , :id => @evento.id) %>
 <%= link_to('Eu vou!',:action => :vou , :id => @evento.id) %>
 

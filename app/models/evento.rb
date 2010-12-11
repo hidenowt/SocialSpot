@@ -11,4 +11,7 @@ class Evento
   def self.next_by_id(id)
     Evento.where(:_id.gt => id).limit(1).to_a.first || Evento.first 
   end
+  def quantos_vao?
+    Track.where("parametros.id"=> self._id.to_s).only(:ip).and(:action => 'vou').aggregate.count
+  end
 end

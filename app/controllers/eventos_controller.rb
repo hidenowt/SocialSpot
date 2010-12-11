@@ -23,6 +23,7 @@ class EventosController < ApplicationController
 
   def show
     @evento = Evento.find(params[:id])
+    render :action => :index
   end
 
 end
