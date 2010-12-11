@@ -1,0 +1,7 @@
+<%= form_for(@evento) do |f| %>
+  <%= f.label :tipo %>: <%= f.text_field :tipo %><br/>
+  <%= f.label :local %>: <%= f.text_field :local %><br/>
+  <%= f.label :custo %>: <%= f.text_field :custo %><br/>
+  <%= f.label :data %>: <%= f.date_select :data %><br/>
+  <%= f.submit %>
+<% end %>

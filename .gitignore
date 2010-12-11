@@ -1,4 +1,5 @@
-**/*.swp
-**/*.log
-**/*.pid
+**.swp
+**.log
+**.pid
+**.sqlite3
 

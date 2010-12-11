@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  controller: MyString
+  action: MyString
+  session_id: MyString
+  ip: MyString
+  created_at: 2010-12-11 07:42:18
+
+two:
+  controller: MyString
+  action: MyString
+  session_id: MyString
+  ip: MyString
+  created_at: 2010-12-11 07:42:18
