@@ -1,6 +1,6 @@
 class EventosController < ApplicationController
   def index
-    @evento = Evento.where(:data.gte => Date.today).limit(1).to_a.first
+    @evento = Evento.where(:data.gte => Date.today).limit(1).to_a.first || Evento.last
   end
 
   def next

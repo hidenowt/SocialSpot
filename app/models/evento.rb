@@ -5,6 +5,10 @@ class Evento
   field :custo, :type => Float
   field :data, :type => Time
 
+  def image
+    nil #TODO: Will return uploaded_image
+  end
+
   def next 
     Evento.where(:_id.gt => self.id).limit(1).to_a.first || Evento.first 
   end

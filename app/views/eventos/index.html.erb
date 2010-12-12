@@ -1,9 +1,21 @@
-<h1> Onde Ir? </h1>
-Tipo: <%= @evento.tipo %><br>
-Custo: <%= @evento.custo %><br>
-Local: <%= @evento.local %><br>
-Data: <%= @evento.data %><br>
-Quantos vao: <%= @evento.quantos_vao? %><br>
-<%= link_to('Proximo',:action => :next , :id => @evento.id) %>
-<%= link_to('Eu vou!',:action => :vou , :id => @evento.id) %>
-
+<h3 class="logo">Social<span>Spot</span></h3>
+<div class="title"> ONDE IR? </div>
+<div class="container">
+  <div class="main" style="position: relative">
+    <div style="float: left"><%= image_tag(@evento.image || "image.png") %>
+    <p class="field">Tipo: <%= @evento.tipo %></p>
+    <p class="field">Custo: <%= @evento.custo %></p>
+    <p class="field">Local: <%= @evento.local %></p>
+    <p class="field">Data: <%= @evento.data.strftime("%d/%m/%Y %H:%M") %></p>
+    <p class="HowMany">Quantos vao: <%= @evento.quantos_vao? %></p>
+    <span class="link">
+      <%= link_to(image_tag('good_mark.png'), {:action => :vou , :id => @evento.id}) %>
+      <%= link_to('Eu Vou!',{:action => :vou , :id => @evento.id}) %>
+    </span><br>
+    <span class="link">
+      <%= link_to(image_tag('bad_mark.png'), {:action => :next , :id => @evento.id}) %>
+      <%= link_to('Proximo',{:action => :next , :id => @evento.id}) %>
+    </span>
+  </div>
+  </div>
+</div>
