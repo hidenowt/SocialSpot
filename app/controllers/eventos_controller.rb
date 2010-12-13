@@ -1,6 +1,6 @@
 class EventosController < ApplicationController
   def index
-    @evento = Evento.futuro.limit(1).to_a.first || Evento.last
+    @evento = Evento.find(params[:id]) rescue Evento.futuro.limit(1).to_a.first || Evento.last
   end
 
   def next
@@ -11,6 +11,7 @@ class EventosController < ApplicationController
 
   def new
     @evento = Evento.new
+    @evento.nome = String.new
   end
 
   def create

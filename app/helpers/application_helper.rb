@@ -5,7 +5,7 @@ module ApplicationHelper
   end
   def botao_twitter(evento)
     url = url_for(:action => :show , :id => evento.id,:only_path => false)
-    raw '<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?url=' << url << '&text=Eu vou no ' << evento.nome << ' no ' << evento.local << ' e vocês?&count=none&via=socialspot" style="width:130px; height:25px;"></iframe>'
+    raw '<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?url=' << url << '&text=Eu vou no ' << evento.nome << ' no ' << evento.local << ' , que mais vai?&count=none&via=socialspot" style="width:130px; height:25px;"></iframe>'
   end
   def botao_orkut(evento)
     url = url_for(:action => :show , :id => evento.id,:only_path => false)

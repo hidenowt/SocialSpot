@@ -11,6 +11,9 @@ class Evento
   def next
     Evento.futuro.where(:_id.gt => self.id).limit(1).to_a.first || Evento.first 
   end
+  def to_s
+    ' - ' << self.nome
+  end
   def self.next_by_id(id)
     Evento.futuro.where(:_id.gt => id).limit(1).to_a.first || Evento.first 
   end

@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
-  <title>SocialSpot</title>
+  <title>SocialSpot <%= @evento %> </title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :all %>
   <%= csrf_meta_tag %>
+<% if @evento %>
+<meta property="og:title" content="<%= @evento.nome %>"/> 
+<meta property="og:type" content="website"/> 
+<meta property="og:image" content="<%= @evento.image %>"/> 
+<meta property="og:url" content="<%= url_for(:action => :show,:id => @evento.id,:only_path => false) %>"/> 
+<meta property="og:site_name" content="SocialSpot"/> 
+<meta property="fb:admins" content="783642784"/> 
+<% end %>
 </head>
 <body>
-
 <%= yield %>
 
 </body>

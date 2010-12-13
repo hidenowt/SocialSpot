@@ -1,0 +1,2 @@
+Evento.delete_all
+Track.delete_all
