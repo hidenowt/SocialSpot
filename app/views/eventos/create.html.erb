@@ -1,2 +1,8 @@
 <H2> Evento Criado </H2>
-<H3>Compartilhe com seus amigos através do link <%= url_for(@evento) %></H3>
+<%= image_tag(@evento.image) %>
+<H3>Compartilhe com seus amigos através do link <%= url_for(:id => @evento.id, :only_path => false) %></H3>
+<H3>Ou através das redes sociais:</h3>
+<%= botao_twitter(@evento) %><br>
+<%= botao_curti(@evento) %><br>
+<%= botao_orkut(@evento) %>
+<%= link_to("Ir para a página do evento",@evento) %>

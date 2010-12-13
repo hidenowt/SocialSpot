@@ -56,6 +56,8 @@ class EventosControllerTest < ActionController::TestCase
   test "should create an evento" do
     assert_difference('Evento.count') do
       post :create, :evento => {
+        :nome => 'evento Teste!',
+        :image => 'http://local/image.jpg',
         :tipo => "Show",
         :local => "ThePub Rock Bar",
         :custo => 15.00,
@@ -74,17 +76,15 @@ class EventosControllerTest < ActionController::TestCase
 
   test "should get vou" do
     get :vou , :id => Evento.last.id.to_s
-    assert_response :success
   end
   test "should show how many people go to evento" do
     get :show , :id=> Evento.last.id.to_s
-    assert @response.body.match('Quantos vao: '+Evento.last.quantos_vao?.to_s)!=nil
+    assert @response.body.match('Quantos vão: '+Evento.last.quantos_vao?.to_s)!=nil
   end
   test "should complete vou and change number" do
     assert_difference('Evento.last.quantos_vao?') do
       get :vou , :id => Evento.last.id.to_s
     end
-    assert_response :success
   end
   test "should create a session_id" do
     get :index

@@ -1,6 +1,6 @@
 class EventosController < ApplicationController
   def index
-    @evento = Evento.where(:data.gte => Date.today).limit(1).to_a.first || Evento.last
+    @evento = Evento.futuro.limit(1).to_a.first || Evento.last
   end
 
   def next
@@ -19,6 +19,13 @@ class EventosController < ApplicationController
   end
 
   def vou
+    @evento = Evento.find(params[:id])
+    respond_to do |format|
+      format.js { 
+        render(:update){|page| page.replace_html 'qts', :partial => "vou", :locals => { :evento => @evento } }
+      }
+    end
+
   end
 
   def show

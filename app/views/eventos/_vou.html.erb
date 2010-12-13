@@ -1,0 +1,9 @@
+<p class="HowMany">Quantos vão: <%= evento.quantos_vao? %></p>
+<h3 class='logo'>Obrigado por confirmar sua presenca!</h3>
+Aproveite e convide seus amigos!
+
+<div>
+  <%= botao_twitter(evento) %><br>
+  <%= botao_curti(evento) %>
+  <% botao_orkut(evento) #Desabilitado por problemas no loading do JS%>
+</div>
